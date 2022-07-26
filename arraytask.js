@@ -105,3 +105,75 @@ var arr= [
     
   }
 }
+//task03//
+function sorting(){
+var sort=document.getElementById("sel2");
+var sortby=document.getElementById("sel3");
+var sort1=sort.selectedIndex;
+var sortby1=sortby.selectedIndex;
+
+if(sort1===1){
+  if(sortby1 ===1){
+     arr.sort((a,b) =>{
+    
+      var x = a.company.toLowerCase(); 
+      var y = b.company.toLowerCase();
+      if (x > y) {return 1;}
+      if (x < y) {return -1;}
+      return 0;});
+      console.log(arr);
+  }
+if(sortby1 === 2){
+  arr.sort((a,b) =>{
+ 
+   var x = a.model.toLowerCase(); 
+   var y = b.model.toLowerCase();
+   if (x > y) {return 1;}
+   if (x < y) {return -1;}
+   return 0;});
+   console.log(arr);
+}
+if(sortby1 === 3){
+  arr.sort((a,b) => {return a.Memory - b.Memory});
+  console.log(arr);
+}
+if(sortby1 === 4){
+  arr.sort((a,b) => {return a.price - b.price});
+  console.log(arr);
+}
+}
+
+
+if(sort1===2){
+  if(sortby1 === 1){
+     arr.sort((a,b) =>{
+    
+      var x = a.company.toLowerCase(); 
+      var y = b.company.toLowerCase();
+      if (x < y) {return 1;}
+      if (x > y) {return -1;}
+      return 0;});
+  }
+if(sortby1 === 2){
+  arr.sort((a,b) =>{
+ 
+   var x = a.model.toLowerCase(); 
+   var y = b.model.toLowerCase();
+   if (x < y) {return 1;}
+   if (x > y) {return -1;}
+   return 0;});
+}
+if(sortby1 === 3){
+  arr.sort((a,b) => {return b.Memory - a.Memory});
+}
+if(sortby1 === 4){
+  arr.sort((a,b) => {return b.price - a.price});
+}
+}
+
+
+document.getElementById("tablebody").innerHTML="";
+loadtable();
+
+
+}
