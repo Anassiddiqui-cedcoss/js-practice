@@ -4,36 +4,36 @@ var arr= [
       company: 'Samsung',
       model: 'Galaxy',
       Memory:64,
-      price: '15000',
+      price: 15000,
     },
     {
         company: 'Nokia',
         model: 'S730',
         Memory: 128,
-        price: '22000',
+        price: 22000,
     },
     {
         company: 'Xiomi',
         model: 'note',
         Memory: 32,
-        price: '12000',
+        price: 12000,
     },
     {
         company: 'Motorola',
         model: 'G10',
         Memory: 32,
-        price: '15000',
+        price: 15000,
     },
     {
     company: 'Apple',
       model: 'S12',
       Memory: 64,
-      price: '25000',
+      price: 25000,
     }
   ];
-  window.onload =()=>{
+  // window.onload =()=>{
     loadtable();
-  };
+  //};
   function loadtable(){
     const tablebody=document.getElementById('tablebody');
     let data='';
@@ -43,7 +43,7 @@ var arr= [
 
         data+="<tr><td>" + arr[i].company +"</td><td>"+ arr[i].model +"</td><td>"+ arr[i].Memory +"</td><td>"+arr[i].price+"</td></tr>"
     }
-    tablebody.innerHTML+=data;
+    tablebody.innerHTML=data;
 
 
 
@@ -176,4 +176,16 @@ document.getElementById("tablebody").innerHTML="";
 loadtable();
 
 
+}
+
+// task04//
+function add(){
+  console.log(arr);
+  var company1=document.getElementById("com").value;
+  var model1=document.getElementById("mod").value;
+  var memory1=document.getElementById("memo").value;
+  var price1=document.getElementById("pri").value;
+  arr01={company:company1,model:model1,Memory:memory1,price:price1};
+  arr.splice(2,0,arr01);
+  loadtable();
 }
