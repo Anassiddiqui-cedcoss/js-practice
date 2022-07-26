@@ -43,10 +43,65 @@ var arr= [
 
         data+="<tr><td>" + arr[i].company +"</td><td>"+ arr[i].model +"</td><td>"+ arr[i].Memory +"</td><td>"+arr[i].price+"</td></tr>"
     }
-    console.log(arr);
     tablebody.innerHTML+=data;
 
 
 
   }
- 
+  // task 02//
+
+   select=document.getElementById("sel");
+   option=document.getElementById("selectoption");
+  function result()
+  {
+    select=document.getElementById("sel");
+    option=document.getElementById("selectoption");
+  ind=select.selectedIndex;
+  console.log(ind);
+  document.getElementById("resulttable").innerHTML="<tr><th>Company</th><th>Model</th><th>Memory</th><th>Price</th></tr>";
+  for(i=0; i<arr.length; i++)
+     {
+    
+      if(ind==0)
+      {
+       if(document.getElementById("selectoption").value == arr[i].company)
+       {
+        document.getElementById("resulttable").innerHTML+="<tr><td>" + arr[i].company +"</td><td>"+ arr[i].model +"</td><td>"+ arr[i].Memory +"</td><td>"+arr[i].price+"</td></tr>"
+
+       }
+    }
+  
+     
+    if(ind==1)
+    {
+       if(document.getElementById("selectoption").value == arr[i].model)
+       {
+        {
+          document.getElementById("resulttable").innerHTML+="<tr><td>" + arr[i].company +"</td><td>"+ arr[i].model +"</td><td>"+ arr[i].Memory +"</td><td>"+arr[i].price+"</td></tr>"
+  
+         }
+       }
+    }
+
+    if(ind==2)
+    {
+       if(document.getElementById("selectoption").value == arr[i].Memory){
+        {
+          document.getElementById("resulttable").innerHTML+="<tr><td>" + arr[i].company +"</td><td>"+ arr[i].model +"</td><td>"+ arr[i].Memory +"</td><td>"+arr[i].price+"</td></tr>"
+  
+         }
+       }
+    }
+    if(ind==3)
+    {
+       if(document.getElementById("selectoption").value == arr[i].price){
+        {
+          document.getElementById("resulttable").innerHTML+="<tr><td>" + arr[i].company +"</td><td>"+ arr[i].model +"</td><td>"+ arr[i].Memory +"</td><td>"+arr[i].price+"</td></tr>"
+  
+         }
+       }
+       
+    }
+    
+  }
+}
