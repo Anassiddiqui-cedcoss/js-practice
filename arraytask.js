@@ -334,28 +334,28 @@ modelindex=model.selectedIndex;
 
 //###############################################################################################################//
  
-/////////////////////////////////////////////////task10/////////////////////////////////////////////////////////
-// var t1='';
-// function showmobile(){
+///////////////////////////////////////////////task10/////////////////////////////////////////////////////////
+var t1='';
+function showmobile(){
 
-//   minimumprice=document.getElementById("minprice").value;
-//   maximumprice=document.getElementById("maxprice").value;
-//   // document.getElementById("showmobiletable").innerHTML
-//   t1="<tr><th>Company</th><th>Model</th><th>Memory(GB)</th><th>Price</th></tr>";
-//   for(i=0;i<arr.length;i++)
-//   {
-//     if(arr[i].price>=minimumprice && arr[i].price<=maximumprice)
+  minimumprice=document.getElementById("minprice").value;
+  maximumprice=document.getElementById("maxprice").value;
+  // document.getElementById("showmobiletable").innerHTML
+  t1="<tr><th>Company</th><th>Model</th><th>Memory(GB)</th><th>Price</th></tr>";
+  for(i=0;i<arr.length;i++)
+  {
+    if(arr[i].price>=minimumprice && arr[i].price<=maximumprice)
 
-//     {
-//        t1+="<tr><td>"+arr[i].company+"</td><td>"+arr[i].model+"</td><td>"+arr[i].Memory+"</td><td>"+arr[i].price+"</td></tr>";
+    {
+       t1+="<tr><td>"+arr[i].company+"</td><td>"+arr[i].model+"</td><td>"+arr[i].Memory+"</td><td>"+arr[i].price+"</td></tr>";
 
-//       }
+      }
 //       // console.log(t1)
-//   }
-//   console.log(document.getElementById("showmobiletable1").id);
-//   document.getElementById("showmobiletable1").innerHTML=t1;
+  }
+  console.log(document.getElementById("showmobiletable1").id);
+  document.getElementById("showmobiletable1").innerHTML=t1;
 
-// }
+}
 
 //##########################################################################################################//
 
