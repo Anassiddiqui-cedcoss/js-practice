@@ -207,72 +207,71 @@ function add(){
 
 ////////////////////////////////// generate bills//task-05/////////////////////////////////////////////////////
 
-// var buyerlist=[];
-// var total=0;
-// var flag=false;
-// function addbill()
-// {
-// let product=document.getElementById("sel4");
-// let quantity=parseInt(document.getElementById("Pquantity").value);
-// let index=product.selectedIndex-1;
-// // alert(index)
-// // console.log("bl",buyerlist);
-// // if (quantity <=arr[index].Quantity){
+var buyerlist=[];
+var total=0;
+var flag=false;
+function addbill()
+{
+let product=document.getElementById("sel4");
+let quantity=parseInt(document.getElementById("Pquantity").value);
+let index=product.selectedIndex-1;
+// alert(index)
+// console.log("bl",buyerlist);
+// if (quantity <=arr[index].Quantity){
   
-//   for(i=0; i<buyerlist.length; i++){
+  for(i=0; i<buyerlist.length; i++){
     
-//     if(arr[index].company == buyerlist[i].company)
-//     {
-//       flag==true;
-//       buyerlist[i].quantity+=parseInt(quantity);
-//       buyerlist[i].amount+=(arr[index].price*quantity);
-//     }
-//   }
+    if(arr[index].company == buyerlist[i].company)
+    {
+      flag==true;
+      buyerlist[i].quantity+=parseInt(quantity);
+      buyerlist[i].amount+=(arr[index].price*quantity);
+    }
+  }
   
-//   console.log(flag)
+  console.log(flag)
   
-//   addtobuyerlist();
-//   if(flag==true){
-//   total=total+(arr[index].price*quantity);
-//   arr[index].Quantity-=quantity;
-//   // arr[index].Quantity=quantity*quantity;
-//   // arr[index].Quantity=quantity-1;
-//   loadtable();
-// }
+  addtobuyerlist();
+  if(flag==true){
+  total=total+(arr[index].price*quantity);
+  arr[index].Quantity-=quantity;
+  
+  loadtable();
+}
 
-//    else
-//    {
-//     alert();
-//    buyerlistobj={company:arr[index].company, model:arr[index].model, quantity:quantity, amount:arr[index].price*quantity};
-//    buyerlist.push(buyerlistobj);
-//    buyerlistobj="";
-//    addtobuyerlist();
-//     total=total+(arr[index].price*quantity);
-//    arr[index].Quantity-=quantity;
-//    loadtable();
+   else
+   {
+    alert();
+   buyerlistobj={company:arr[index].company, model:arr[index].model, quantity:quantity, amount:arr[index].price*quantity};
+   buyerlist.push(buyerlistobj);
+   buyerlistobj="";
+   addtobuyerlist();
+    total=total+(arr[index].price*quantity);
+   arr[index].Quantity-=quantity;
+   loadtable();
    
 
-// }}
-// // console.log(flag)
-// // }
-//   function addtobuyerlist(){
-//     console.log(buyerlist);
-//     billtab.innerHTML="<tr><th>Description</th><th>Quantity</th><th>Amount</th></tr>";
+}}
+// console.log(flag)
+// }
+  function addtobuyerlist(){
+    console.log(buyerlist);
+    billtab.innerHTML="<tr><th>Description</th><th>Quantity</th><th>Amount</th></tr>";
 
-//     for(i=0; i<buyerlist.length; i++){
-//       // alert()
-//       billtab.innerHTML+="<tr><td>"+buyerlist[i].company+buyerlist[i].model+"</td><td>"+buyerlist[i].quantity+"</td><td>"+buyerlist[i].amount+"</td></tr>"
+    for(i=0; i<buyerlist.length; i++){
+      // alert()
+      billtab.innerHTML+="<tr><td>"+buyerlist[i].company+buyerlist[i].model+"</td><td>"+buyerlist[i].quantity+"</td><td>"+buyerlist[i].amount+"</td></tr>"
     
-//    }
-//    console.log(buyerlist)
-//   //  document.getElementById("pquantity").innerHTML="";
-//   }
-//   function generatebill(){
+   }
+   console.log(buyerlist)
+  //  document.getElementById("pquantity").innerHTML="";
+  }
+  function generatebill(){
     
-//     document.getElementById("billtab1").innerHTML="<tr><th>Total</th><td> </td><td>"+total+"</td></tr>";
-//     document.getElementById("btn").style.display="none";
+    document.getElementById("billtab1").innerHTML="<tr><th>Total</th><td> </td><td>"+total+"</td></tr>";
+    document.getElementById("btn").style.display="none";
 
-//   }
+  }
 
 
   // //////////////////////////////////////////////task 06//[delete items from table]//////////////////////////////////////////////#################################################################################################################################
@@ -340,7 +339,6 @@ function showmobile(){
 
   minimumprice=document.getElementById("minprice").value;
   maximumprice=document.getElementById("maxprice").value;
-  // document.getElementById("showmobiletable").innerHTML
   t1="<tr><th>Company</th><th>Model</th><th>Memory(GB)</th><th>Price</th></tr>";
   for(i=0;i<arr.length;i++)
   {
