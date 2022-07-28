@@ -322,15 +322,15 @@ function updateinventory(){
 
 ////////////////////////////////////////////////task09//[rating]//////////////////////////////////////////////
 
-// function rating(){
-// var model=document.getElementById("sel6");
-// var rate=document.getElementById("sel7");
-// modelindex=model.selectedIndex;
-//    var rateindex=rate.value;
-//    arr[modelindex-1].Rating=rateindex;
-//    loadtable();
-//   //  alert(rateindex);
-// }
+function rating(){
+var model=document.getElementById("sel6");
+var rate=document.getElementById("sel7");
+modelindex=model.selectedIndex;
+   var rateindex=rate.value;
+   arr[modelindex-1].Rating=rateindex;
+   loadtable();
+  //  alert(rateindex);
+}
 
 //###############################################################################################################//
  
