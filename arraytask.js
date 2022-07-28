@@ -306,35 +306,35 @@ function clicked(arg)
   
 // ////////////////////////////////task 08//---UPDATE-INVENTORY---///////////////////////////////////////////////
 
-// function updateinventory(){
-//   var selectedmodel=document.getElementById("sel5");
-//   var updatequantity=document.getElementById("inventoryquantity").value;
-//   var selectmodelindex=selectedmodel.selectedIndex;
-//   // alert(selectmodelindex)
-//   arr[selectmodelindex-1].Quantity=updatequantity;
-//   // document.getElementById('tablebody').innerHTML="inventoryquantity";
-//   loadtable();
+function updateinventory(){
+  var selectedmodel=document.getElementById("sel5");
+  var updatequantity=document.getElementById("inventoryquantity").value;
+  var selectmodelindex=selectedmodel.selectedIndex;
+  // alert(selectmodelindex)
+  arr[selectmodelindex-1].Quantity=updatequantity;
+  // document.getElementById('tablebody').innerHTML="inventoryquantity";
+  loadtable();
 
 
-// }
+}
 
-// //###########################################################################################################//
+//###########################################################################################################//
 
-// ////////////////////////////////////////////////task09//[rating]//////////////////////////////////////////////
+////////////////////////////////////////////////task09//[rating]//////////////////////////////////////////////
 
 // function rating(){
-//    var model=document.getElementById("sel6");
-//    var rate=document.getElementById("sel7");
-//        modelindex=model.selectedIndex;
+// var model=document.getElementById("sel6");
+// var rate=document.getElementById("sel7");
+// modelindex=model.selectedIndex;
 //    var rateindex=rate.value;
 //    arr[modelindex-1].Rating=rateindex;
 //    loadtable();
 //   //  alert(rateindex);
 // }
 
-// //###############################################################################################################//
+//###############################################################################################################//
  
-// /////////////////////////////////////////////////task10/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////task10/////////////////////////////////////////////////////////
 // var t1='';
 // function showmobile(){
 
