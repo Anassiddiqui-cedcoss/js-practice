@@ -44,10 +44,9 @@ var arr= [
       Rating:"",
     }
   ];
-  // window.onload =()=>{
+ 
     loadtable();
-  //};
-  function loadtable(){
+    function loadtable(){
     const tablebody=document.getElementById('tablebody');
     let data='';
     for(i=0; i<arr.length; i++){
@@ -61,7 +60,7 @@ var arr= [
 
 
   }
-  // ////////////////////////////////////////////task 02//////////////////////////////////////////////////////////////////////////
+  // ////////////////////////////////////////////task 02///////////////////////////////////////////////////////
 
    select=document.getElementById("sel");
    option=document.getElementById("selectoption");
@@ -118,7 +117,7 @@ var arr= [
     
   }
 }
-////////////////////////////////////////////////////////////////////task03///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////task03/////////////////////////////////////
 
 function sorting(){
 var sort=document.getElementById("sel2");
@@ -192,7 +191,7 @@ loadtable();
 
 }
 
-////////////////////////////////////////////////////////////////////// task04/////////////////////////////////////////////////////
+////////////////////////////////////////////////////task04/////////////////////////////////////////////////////
 
 function add(){
   console.log(arr);
@@ -209,72 +208,79 @@ function add(){
 
 var buyerlist=[];
 var total=0;
-var flag=false;
+function loadTempTable(tmpArr)
+{
+  const tablebody=document.getElementById('billtab');
+    let data='';
+    for(i=0; i<tmpArr.length; i++){
+
+  
+
+        data+="<tr><td>" + tmpArr[i].company +"</td><td>"+ tmpArr[i].model +"</td><td>"+ tmpArr[i].quantity +"</td><td>"+tmpArr[i].amount+"</td></tr>";
+    }
+    tablebody.innerHTML=data;
+}
 function addbill()
 {
 let product=document.getElementById("sel4");
 let quantity=parseInt(document.getElementById("Pquantity").value);
 let index=product.selectedIndex-1;
-// alert(index)
-// console.log("bl",buyerlist);
-// if (quantity <=arr[index].Quantity){
-  
-  for(i=0; i<buyerlist.length; i++){
-    
-    if(arr[index].company == buyerlist[i].company)
-    {
-      flag==true;
-      buyerlist[i].quantity+=parseInt(quantity);
-      buyerlist[i].amount+=(arr[index].price*quantity);
-    }
-  }
-  
-  console.log(flag)
-  
-  addtobuyerlist();
-  if(flag==true){
-  total=total+(arr[index].price*quantity);
-  arr[index].Quantity-=quantity;
-  
-  loadtable();
+var chk=checkprexist(product.value);
+var r=updateQ(product.value,quantity);
+if(r==-1)
+{
+  alert("Not enough stock");
+  return;
 }
+if(chk==-1){
+  
+  let buyerlistobj={company:product.value, model:arr[index].model, quantity:quantity, amount:arr[index].price*quantity};
 
-   else
-   {
-    alert();
-   buyerlistobj={company:arr[index].company, model:arr[index].model, quantity:quantity, amount:arr[index].price*quantity};
-   buyerlist.push(buyerlistobj);
-   buyerlistobj="";
-   addtobuyerlist();
-    total=total+(arr[index].price*quantity);
-   arr[index].Quantity-=quantity;
-   loadtable();
-   
-
-}}
-// console.log(flag)
-// }
-  function addtobuyerlist(){
-    console.log(buyerlist);
-    billtab.innerHTML="<tr><th>Description</th><th>Quantity</th><th>Amount</th></tr>";
-
-    for(i=0; i<buyerlist.length; i++){
-      // alert()
-      billtab.innerHTML+="<tr><td>"+buyerlist[i].company+buyerlist[i].model+"</td><td>"+buyerlist[i].quantity+"</td><td>"+buyerlist[i].amount+"</td></tr>"
-    
+  buyerlist.push(buyerlistobj);
+  loadtable();
+  loadTempTable(buyerlist);
+}
+else{
+ 
+  buyerlist[chk].quantity=parseInt(buyerlist[chk].quantity)+parseInt(quantity);
+  loadtable();
+  loadTempTable(buyerlist);
+}
+}
+function updateQ(selp,vQ){
+  for(i=0;i<arr.length;i++)
+  {
+    if(arr[i].company==selp){
+      if(vQ>arr[i].Quantity){
+        return -1;
+        
+      }
+      arr[i].Quantity-=vQ;
+      return 0;
+    }
    }
-   console.log(buyerlist)
-  //  document.getElementById("pquantity").innerHTML="";
+   loadtable();
   }
-  function generatebill(){
-    
-    document.getElementById("billtab1").innerHTML="<tr><th>Total</th><td> </td><td>"+total+"</td></tr>";
+   function checkprexist(sel){
+   
+    for(i=0;i<buyerlist.length;i++){
+      if(buyerlist[i].company==sel){
+        return i;
+      }
+      }
+      return -1;
+    }
+    function generatebill(){
+    let total=0;
     document.getElementById("btn").style.display="none";
+    for(i=0;i<buyerlist.length;i++){
+      total+=buyerlist[i].amount;
+    }
+    document.getElementById("billtab1").innerHTML="<tr><th>Total</th><td> </td><td>"+total+"</td></tr>";
+   }
 
-  }
 
-
-  // //////////////////////////////////////////////task 06//[delete items from table]//////////////////////////////////////////////#################################################################################################################################
+  // //////////////////////////////////////////////task 06//[delete items from table]//////////////////////////#############################################################################################################
  
   function deleteitem(){
         var validValues=arr.filter(function(val,index){
@@ -303,7 +309,7 @@ function clicked(arg)
 
 //############################################################################################################/
   
-// ////////////////////////////////task 08//---UPDATE-INVENTORY---///////////////////////////////////////////////
+// ////////////////////////////////task 08//---UPDATE-INVENTORY---/////////////////////////////////////////////
 
 function updateinventory(){
   var selectedmodel=document.getElementById("sel5");
@@ -317,7 +323,7 @@ function updateinventory(){
 
 }
 
-//###########################################################################################################//
+//###########################################################################################################
 
 ////////////////////////////////////////////////task09//[rating]//////////////////////////////////////////////
 
@@ -331,7 +337,7 @@ modelindex=model.selectedIndex;
   //  alert(rateindex);
 }
 
-//###############################################################################################################//
+//###############################################################################################################
  
 ///////////////////////////////////////////////task10/////////////////////////////////////////////////////////
 var t1='';
@@ -356,10 +362,3 @@ function showmobile(){
 }
 
 //##########################################################################################################//
-
-
-
-
-
-
-
