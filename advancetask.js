@@ -48,3 +48,17 @@ function del(args){
     
   
 }
+//##############################################Task-02#######################################################
+class details{constructor(id,Name,salary)
+{
+        
+    this.id = id;
+    this.Name=Name;
+    this.salary=salary;
+} 
+}
+let alldetails = new details(122,"anas",20000);
+var text="<table><tr><th>ID</th><th>Name</th><th>Total-Salary</th></tr>";
+text+="<tr><td>"+alldetails.id+"</td><td>"+alldetails.Name+"</td><td>"+alldetails.salary+"</td></tr>";
+text+="</table>";
+document.getElementById("table1").innerHTML=text;
