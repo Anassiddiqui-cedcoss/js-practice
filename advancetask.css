@@ -1,0 +1,23 @@
+.id{
+    display: flex;
+
+}
+.name{
+    display: flex;
+    
+}
+.sal{
+    display: flex;
+    
+}
+.container input{
+    height: 38px;
+}
+#id{
+    margin-left: 60px;
+    
+}
+#name{
+    margin-left: 40px;
+    
+}
