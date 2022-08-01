@@ -62,3 +62,16 @@ var text="<table><tr><th>ID</th><th>Name</th><th>Total-Salary</th></tr>";
 text+="<tr><td>"+alldetails.id+"</td><td>"+alldetails.Name+"</td><td>"+alldetails.salary+"</td></tr>";
 text+="</table>";
 document.getElementById("table1").innerHTML=text;
+
+//###############################################task=04######################################################
+let txt = '{"employees":[' +
+'{"Id":"123","Name":"Anas","Totalsalary":"10000" },' +
+'{"Id":"456","Name":"Akash","Totalsalary":"20000"},' +
+'{"Id":"789","Name":"Anant","Totalsalary":"30000" }]}';
+
+
+
+const obj = JSON.parse(txt);
+document.getElementById("table2").innerHTML =
+obj.employees[0].Id + " " + obj.employees[0].Name+" "+obj.employees[0].Totalsalary;
+
