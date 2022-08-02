@@ -145,3 +145,33 @@ function populatearr(){
 
    populatearr();
 
+//##############################################Task-06######################################################
+
+const array1=[
+    {id:123,name:"Anas",salary:8000,output:""},
+    {id:456,name:"Akash",salary:9000,output:""},
+    {id:789,name:"Aman",salary:7000,output:""},
+    {id:321,name:"Abhinav",salary:5000,output:""}
+];
+function populatearr1(){
+    table1="<table><tr><th>ID</th><th>Name</th><th>TotalSalary</th><th>salary(15%)</th></tr>";
+    for(i=0; i<array1.length;i++)
+    {
+
+    table1+=
+    "<tr><td>" + array1[i].id +"</td><td>"
+    + array1[i].name +"</td><td>"
+    + array1[i].salary +"</td><td>"+array1[i].output+"</td></tr><br>";
+    table1+="</table>";
+}
+      
+      
+document.getElementById('table4').innerHTML=table1;
+     }
+     updatesalary();
+     function updatesalary(){
+
+          array1.map((x)=>x.output=x.salary*0.15);
+          populatearr1();
+     }
+//######################################Task-07#############################################################
