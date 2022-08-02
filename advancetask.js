@@ -99,3 +99,49 @@ var text="<table><tr><th>ID</th><th>Name</th><th>TotalSalary</th></tr>";
 text+="<tr><td>"+objdetails.id+"</td><td>"+objdetails.Name+"</td><td>"+objdetails.salary+"</td></tr>";
 text+="</table>";
 document.getElementById("tabledetails").innerHTML=text;
+
+//###############################################################task-05#########################################################
+
+const array=[
+    {id:123,name:"Anas",salary:8000,updatedsalary:""},
+    {id:456,name:"Akash",salary:9000,updatedsalary:""},
+    {id:789,name:"Aman",salary:7000,updatedsalary:""},
+    {id:321,name:"Abhinav",salary:5000,updatedsalary:""}
+];
+function populatearr(){
+   
+    
+     try {
+     for(i=0;i<array.length;i++)
+     {
+         
+        updatedsalary=array[i].salary*1.10;
+        array[i].updatedsalary=updatedsalary;
+         
+        }
+    
+     
+    }
+    catch(err) {
+        alert();
+        
+    }
+    
+    table="<table><tr><th>ID</th><th>Name</th><th>TotalSalary</th><th>updatedsalary</th></tr>";
+    for(i=0; i<array.length;i++)
+    {
+
+    table+=
+    "<tr><td>" + array[i].id +"</td><td>"
+    + array[i].name +"</td><td>"
+    + array[i].salary +"</td><td>"+array[i].updatedsalary+"</td></tr><br>";
+    table+="</table>";
+      
+      
+     }
+     document.getElementById('table3').innerHTML=table;
+     
+   }
+
+   populatearr();
+
