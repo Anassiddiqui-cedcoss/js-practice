@@ -40,15 +40,9 @@ function populate(){
             }
             if(salary.value<=0){
                 debugger;
-                // alert();
+            
             }
             
-            // try{
-            //     if(id=="" && Name=="" && salary==""){
-            //         throw "It should be filled "
-            //     }
-            //     if(id)
-            // }
             document.getElementById("result").innerHTML=document.getElementById("result").innerHTML+text;
             
         }
@@ -187,5 +181,27 @@ document.getElementById('table4').innerHTML=table1;
          populatearr1();
         }
 //#######################################Task-07#############################################################
-//##########################################Task-08############################################################
+//##########################################Task-09############################################################
+"use strict";
+var emp=[
+    {id:123,name:"Anas",salary:30000},
+    {id:456,name:"Akash",salary:30000},
+    {id:789,name:"Aman",salary:30000},
+    {id:321,name:"Abhinav",salary:30000}
+];
+// console.log(emp)
+function addtable(){
+     var emp1="<table><tr><th>ID</th><th>Name</th><th>TotalSalary</th></tr>";
+    for(i=0; i<emp.length;i++)
+    {
+        
+    emp1+=
+    "<tr><td>" + emp[i].id +"</td><td>"
+    + emp[i].name +"</td><td>"
+    + emp[i].salary +"</td></tr>";
+    emp1+="</table>";
+}
+document.getElementById('emptable').innerHTML=emp1;
 
+}
+addtable();
